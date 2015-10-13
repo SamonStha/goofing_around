@@ -203,12 +203,13 @@ for x in range(0,len(all_stocktwits)):
 		# Step 1: The Date
 		##########################################
 		#Get the date: http://i0.kym-cdn.com/photos/images/newsfeed/000/209/945/D6PfW.jpg?1322673184
-		cursor.execute('SELECT Date From {0} WHERE Date = "{1:%Y}-{1:%m}-{1:%d}"'.format(summary_data_table,message_date_abb_obj))
+		cursor.execute('SELECT Date From {0} WHERE Date = "{1}"'.format(summary_data_table,message_date_abb_obj))
 		date_exist = cursor.fetchall()
 		#print "does the date exist?",date_exist
 		#print "this is the sentiment_type: ",sentiment_type
 		if not date_exist:
-			cursor.execute('INSERT INTO {0} (Date,Most_Recent_Message) VALUES ("{1:%Y}-{1:%m}-{1:%d}",{2})'.format(summary_data_table, message_date_abb_obj, all_stocktwits[x][1]))
+			cursor.execute('INSERT INTO {0} (Date,Most_Recent_Message) VALUES ("{1:%Y}-{1:%m}-{1:%d}")'.format(summary_data_table, message_date_abb_obj))
+		cursor.execute('UPDATE {0} SET Most_Recent_Message = {1} WHERE Date = "{2}"'.format(summary_data_table, all_stocktwits[x][1], message_date_abb_obj))
 
 
 		##########################################
