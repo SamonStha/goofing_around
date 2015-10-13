@@ -54,7 +54,7 @@ smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 smtpObj.ehlo()
 smtpObj.starttls()
 #REMEMBER TO CHANGE!
-smtpObj.login('jamesdkent21@gmail.com', '##########')
+smtpObj.login('jamesdkent21@gmail.com', 'heartking23')
 #for use later
 	
 
@@ -209,7 +209,7 @@ for x in range(0,len(all_stocktwits)):
 		#print "does the date exist?",date_exist
 		#print "this is the sentiment_type: ",sentiment_type
 		if not date_exist:
-			cursor.execute('INSERT INTO {0} (Date,Most_Recent_Message) VALUES ("{1:%Y}-{1:%m}-{1:%d}")'.format(summary_data_table, message_date_abb_obj))
+			cursor.execute('INSERT INTO {0} (Date) VALUES ("{1:%Y}-{1:%m}-{1:%d}")'.format(summary_data_table, message_date_abb_obj))
 		cursor.execute('UPDATE {0} SET Most_Recent_Message = {1} WHERE Date = "{2}"'.format(summary_data_table, all_stocktwits[x][1], message_date_abb_obj))
 
 
