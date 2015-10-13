@@ -44,7 +44,7 @@ all_stocktwits = [ ["INTC", 0], ["AMD", 0], ["IBM", 0], ["NVDA", 0], ["ATVI", 0]
 		#WARNING: NOT RECOMMENDED TO SET IT UP THE WAY I DID.
 		#replace passwd="" with sql password for the user
 print "Connecting to mySQL..."
-stocktwit_db = MySQLdb.connect(host="localhost",user="debian-sys-maint",passwd="Kcfe2mRJXt5vHtHu")
+stocktwit_db = MySQLdb.connect(host="localhost",user="root",passwd="######")
 cursor = stocktwit_db.cursor()
 	
 #should move this to Cron (bash)
@@ -54,7 +54,7 @@ smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 smtpObj.ehlo()
 smtpObj.starttls()
 #REMEMBER TO CHANGE!
-smtpObj.login('jamesdkent21@gmail.com', 'heartking23')
+smtpObj.login('jamesdkent21@gmail.com', '#########')
 #for use later
 	
 
