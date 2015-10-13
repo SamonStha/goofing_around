@@ -53,7 +53,8 @@ cursor = stocktwit_db.cursor()
 smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 smtpObj.ehlo()
 smtpObj.starttls()
-smtpObj.login('jamesdkent21@gmail.com', 'heartking23')
+#REMEMBER TO CHANGE!
+smtpObj.login('jamesdkent21@gmail.com', '##########')
 #for use later
 	
 
